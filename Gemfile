@@ -74,3 +74,4 @@ group :test do
 end
 
 gem 'bootstrap', '~> 5.2.3'
+gem 'pry-rails'
