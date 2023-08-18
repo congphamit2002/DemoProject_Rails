@@ -19967,3 +19967,40 @@ Processing by RegistrationsController#create as TURBO_STREAM
 Completed 422 Unprocessable Entity in 15ms (Views: 9.2ms | ActiveRecord: 0.5ms | Allocations: 20044)
 
 
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-08-18 10:57:57 +0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.4ms | Allocations: 3710)
+  Rendered layout layouts/application.html.erb (Duration: 60.4ms | Allocations: 50601)
+Completed 200 OK in 80ms (Views: 64.5ms | ActiveRecord: 3.1ms | Allocations: 66891)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-08-18 10:57:58 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1233)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 6866)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms | Allocations: 7466)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-08-18 10:57:58 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 1233)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 6866)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.0ms | Allocations: 7476)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-08-18 10:57:58 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1233)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 6866)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms | Allocations: 7487)
+
+
