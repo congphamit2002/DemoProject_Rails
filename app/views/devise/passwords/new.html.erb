@@ -11,8 +11,6 @@
                   Enter your email address and we'll send you an email with instructions to reset your password.
                 </p>
                   <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-                    <% error_hash = {}; resource.errors.each {|error| error_hash[error.attribute] = error.full_message } %>
-
                     <div class="d-flex flex-row align-items-center mb-4">
                       <%# <i class="fas fa-lock fa-lg me-3 fa-fw"></i> %>
                       <div class="form-outline flex-fill mb-0">
@@ -21,7 +19,9 @@
                       </div>
                     </div>
 
-                    <%= f.label error_hash[:email], class: "label text-danger mb-4" if error_hash.include?(:email) %>
+                    <% resource.errors.full_messages_for(:email).each do |message| %>
+                      <%= f.label message, class: "label text-danger mt-1"%>
+                    <% end %>
 
                     <div class="d-flex justify-content-center mb-3 mb-lg-4">
                       <%= f.submit "Send reset password", class: "btn btn-primary btn-lg col-6" %>

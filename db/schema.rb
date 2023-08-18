@@ -78,7 +78,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_07_033911) do
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
-    t.integer "gender", limit: 3
+    t.integer "gender", limit: 1
     t.string "phone", limit: 13
     t.string "address"
     t.integer "role"
