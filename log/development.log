@@ -31788,3 +31788,458 @@ Processing by RegistrationsController#create as TURBO_STREAM
 Completed 422 Unprocessable Entity in 16ms (Views: 7.1ms | ActiveRecord: 1.1ms | Allocations: 16540)
 
 
+Started GET "/" for ::1 at 2023-08-21 10:00:23 +0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 278)
+  Rendered layout layouts/application.html.erb (Duration: 51.5ms | Allocations: 44033)
+Completed 200 OK in 58ms (Views: 53.4ms | ActiveRecord: 0.0ms | Allocations: 48259)
+
+
+Started GET "/" for ::1 at 2023-08-21 10:00:26 +0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 6107)
+Completed 200 OK in 10ms (Views: 10.1ms | ActiveRecord: 0.0ms | Allocations: 6372)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-08-21 10:00:29 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.8ms | Allocations: 3672)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 9439)
+Completed 200 OK in 31ms (Views: 9.2ms | ActiveRecord: 5.3ms | Allocations: 23234)
+
+
+Started GET "/users/auth/google" for ::1 at 2023-08-21 10:00:31 +0700
+Started GET "/users/auth/google" for ::1 at 2023-08-21 10:00:32 +0700
+Started GET "/users/auth/google/callback?state=ac0a5d52a25ec0a4001c7b4d2454886d7fb1958a11d24388&code=4%2F0Adeu5BUuTiUUpQKCxqG2zC-rW2TdZYgYOIJuwIamT7aM5zymM4vuUzBzaBYld5xo0BR3TQ&scope=email+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&prompt=none" for ::1 at 2023-08-21 10:00:32 +0700
+Processing by Users::OmniauthCallbacksController#google as HTML
+  Parameters: {"state"=>"ac0a5d52a25ec0a4001c7b4d2454886d7fb1958a11d24388", "code"=>"4/0Adeu5BUuTiUUpQKCxqG2zC-rW2TdZYgYOIJuwIamT7aM5zymM4vuUzBzaBYld5xo0BR3TQ", "scope"=>"email openid https://www.googleapis.com/auth/userinfo.email", "authuser"=>"0", "prompt"=>"none"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`provider` = 'google' AND `users`.`uid` = '116016040843001409344' LIMIT 1[0m
+  ↳ app/models/user.rb:22:in `from_omniauth'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'thanhcongpham22072002@gmail.com' AND `users`.`id` != 16 LIMIT 1[0m
+  ↳ app/controllers/users/omniauth_callbacks_controller.rb:6:in `google'
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'thanhcongpham22072002@gmail.com' AND `users`.`id` != 16 LIMIT 1[0m
+  ↳ app/controllers/users/omniauth_callbacks_controller.rb:7:in `google'
+Redirected to http://localhost:3000/
+Completed 302 Found in 13ms (ActiveRecord: 2.1ms | Allocations: 5429)
+
+
+Started GET "/" for ::1 at 2023-08-21 10:00:33 +0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 16 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/layouts/application.html.erb:16
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 6907)
+Completed 200 OK in 6ms (Views: 6.0ms | ActiveRecord: 0.3ms | Allocations: 7168)
+
+
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Create (1.6ms)[0m  [1m[32mINSERT INTO `categories` (`name`, `created_at`, `updated_at`) VALUES ('Sea food', '2023-08-21 03:13:13.316275', '2023-08-21 03:13:13.316275')[0m
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/admin/categories" for ::1 at 2023-08-21 10:15:58 +0700
+Processing by Admin::CategoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT `categories`.* FROM `categories`[0m
+  ↳ app/views/admin/categories/index.html.erb:10
+  Rendered admin/categories/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 2166)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 16 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/layouts/application.html.erb:16
+  Rendered layout layouts/application.html.erb (Duration: 20.1ms | Allocations: 24995)
+Completed 200 OK in 23ms (Views: 20.9ms | ActiveRecord: 2.4ms | Allocations: 26756)
+
+
+Started GET "/admin/categories" for ::1 at 2023-08-21 10:17:22 +0700
+Processing by Admin::CategoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT `categories`.* FROM `categories`[0m
+  ↳ app/views/admin/categories/index.html.erb:10
+  Rendered admin/categories/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 807)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 16 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/layouts/application.html.erb:16
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 8081)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.5ms | Allocations: 8943)
+
+
+Started GET "/admin/categories" for ::1 at 2023-08-21 10:17:38 +0700
+Processing by Admin::CategoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT `categories`.* FROM `categories`[0m
+  ↳ app/views/admin/categories/index.html.erb:10
+  Rendered admin/categories/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 612)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 16 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/layouts/application.html.erb:16
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 7396)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.5ms | Allocations: 7673)
+
+
+Started GET "/admin/categories" for ::1 at 2023-08-21 10:19:14 +0700
+Processing by Admin::CategoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT `categories`.* FROM `categories`[0m
+  ↳ app/views/admin/categories/index.html.erb:10
+  Rendered admin/categories/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 808)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 16 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/layouts/application.html.erb:16
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 8158)
+Completed 200 OK in 13ms (Views: 11.5ms | ActiveRecord: 0.6ms | Allocations: 9011)
+
+
+Started GET "/admin/categories" for ::1 at 2023-08-21 10:19:15 +0700
+Processing by Admin::CategoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT `categories`.* FROM `categories`[0m
+  ↳ app/views/admin/categories/index.html.erb:10
+  Rendered admin/categories/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 612)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 16 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/layouts/application.html.erb:16
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 7513)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.7ms | Allocations: 7790)
+
+
+Started GET "/admin/categories" for ::1 at 2023-08-21 10:19:23 +0700
+Processing by Admin::CategoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT `categories`.* FROM `categories`[0m
+  ↳ app/views/admin/categories/index.html.erb:10
+  Rendered admin/categories/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 811)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 16 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/layouts/application.html.erb:16
+  Rendered layout layouts/application.html.erb (Duration: 13.3ms | Allocations: 8066)
+Completed 200 OK in 17ms (Views: 14.4ms | ActiveRecord: 1.0ms | Allocations: 8921)
+
+
+Started GET "/admin/categories" for ::1 at 2023-08-21 10:19:24 +0700
+Processing by Admin::CategoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT `categories`.* FROM `categories`[0m
+  ↳ app/views/admin/categories/index.html.erb:10
+  Rendered admin/categories/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 612)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 16 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/layouts/application.html.erb:16
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 7394)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.5ms | Allocations: 7671)
+
+
+Started GET "/admin/categories" for ::1 at 2023-08-21 10:19:24 +0700
+Processing by Admin::CategoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT `categories`.* FROM `categories`[0m
+  ↳ app/views/admin/categories/index.html.erb:10
+  Rendered admin/categories/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 612)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 16 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/layouts/application.html.erb:16
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 7393)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.5ms | Allocations: 7670)
+
+
+Started GET "/admin/categories" for ::1 at 2023-08-21 10:19:34 +0700
+Processing by Admin::CategoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT `categories`.* FROM `categories`[0m
+  ↳ app/views/admin/categories/index.html.erb:10
+  Rendered admin/categories/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 808)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 16 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/layouts/application.html.erb:16
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 8099)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.6ms | Allocations: 8952)
+
+
+Started GET "/admin/categories" for ::1 at 2023-08-21 10:19:44 +0700
+Processing by Admin::CategoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (3.0ms)[0m  [1m[34mSELECT `categories`.* FROM `categories`[0m
+  ↳ app/views/admin/categories/index.html.erb:10
+  Rendered admin/categories/index.html.erb within layouts/application (Duration: 7.2ms | Allocations: 803)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 16 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/layouts/application.html.erb:16
+  Rendered layout layouts/application.html.erb (Duration: 45.4ms | Allocations: 8168)
+Completed 200 OK in 48ms (Views: 44.3ms | ActiveRecord: 3.3ms | Allocations: 9022)
+
+
+Started GET "/admin/categories" for ::1 at 2023-08-21 10:21:28 +0700
+Processing by Admin::CategoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT `categories`.* FROM `categories`[0m
+  ↳ app/views/admin/categories/index.html.erb:10
+  Rendered admin/categories/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 815)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 16 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/layouts/application.html.erb:16
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 8096)
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.6ms | Allocations: 8952)
+
+
+Started GET "/admin/categories" for ::1 at 2023-08-21 10:22:04 +0700
+Processing by Admin::CategoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT `categories`.* FROM `categories`[0m
+  ↳ app/views/admin/categories/index.html.erb:10
+  Rendered admin/categories/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 803)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 16 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/layouts/application.html.erb:16
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 8085)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.5ms | Allocations: 8940)
+
+
+Started GET "/admin/categories" for ::1 at 2023-08-21 10:22:37 +0700
+Processing by Admin::CategoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT `categories`.* FROM `categories`[0m
+  ↳ app/views/admin/categories/index.html.erb:10
+  Rendered admin/categories/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 828)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 16 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/layouts/application.html.erb:16
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 8108)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.5ms | Allocations: 8961)
+
+
+Started GET "/admin/categories" for ::1 at 2023-08-21 10:22:37 +0700
+Processing by Admin::CategoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT `categories`.* FROM `categories`[0m
+  ↳ app/views/admin/categories/index.html.erb:10
+  Rendered admin/categories/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 613)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 16 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/layouts/application.html.erb:16
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 7409)
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.7ms | Allocations: 7686)
+
+
+Started GET "/admin/categories" for ::1 at 2023-08-21 10:22:38 +0700
+Processing by Admin::CategoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT `categories`.* FROM `categories`[0m
+  ↳ app/views/admin/categories/index.html.erb:10
+  Rendered admin/categories/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 613)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 16 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/layouts/application.html.erb:16
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 7427)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.7ms | Allocations: 7704)
+
+
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT `categories`.* FROM `categories`[0m
+Started GET "/admin/categories" for ::1 at 2023-08-21 10:23:36 +0700
+Processing by Admin::CategoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT `categories`.* FROM `categories`[0m
+  ↳ app/views/admin/categories/index.html.erb:10
+  Rendered admin/categories/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 613)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 16 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/layouts/application.html.erb:16
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 7418)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.5ms | Allocations: 7695)
+
+
+Started GET "/admin/categories" for ::1 at 2023-08-21 10:24:30 +0700
+Processing by Admin::CategoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT `categories`.* FROM `categories`[0m
+  ↳ app/views/admin/categories/index.html.erb:10
+  Rendered admin/categories/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 964)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 16 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/layouts/application.html.erb:16
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 8339)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.7ms | Allocations: 9195)
+
+
+Started GET "/admin/categories" for ::1 at 2023-08-21 10:24:31 +0700
+Processing by Admin::CategoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT `categories`.* FROM `categories`[0m
+  ↳ app/views/admin/categories/index.html.erb:10
+  Rendered admin/categories/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 664)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 16 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/layouts/application.html.erb:16
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 7532)
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.6ms | Allocations: 7809)
+
+
+Started GET "/admin/categories" for ::1 at 2023-08-21 10:24:32 +0700
+Processing by Admin::CategoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT `categories`.* FROM `categories`[0m
+  ↳ app/views/admin/categories/index.html.erb:10
+  Rendered admin/categories/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 664)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 16 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/layouts/application.html.erb:16
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 7490)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.6ms | Allocations: 7766)
+
+
+Started GET "/admin/categories" for ::1 at 2023-08-21 10:24:45 +0700
+Processing by Admin::CategoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` /* loading for inspect */ LIMIT 11[0m
+  ↳ app/views/admin/categories/index.html.erb:10
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT `categories`.* FROM `categories`[0m
+  ↳ app/views/admin/categories/index.html.erb:11
+  Rendered admin/categories/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1569)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 16 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/layouts/application.html.erb:16
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 8846)
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.7ms | Allocations: 9700)
+
+
+Started GET "/admin/categories" for ::1 at 2023-08-21 10:24:45 +0700
+Processing by Admin::CategoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` /* loading for inspect */ LIMIT 11[0m
+  ↳ app/views/admin/categories/index.html.erb:10
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT `categories`.* FROM `categories`[0m
+  ↳ app/views/admin/categories/index.html.erb:11
+  Rendered admin/categories/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1306)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 16 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/layouts/application.html.erb:16
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 8114)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.7ms | Allocations: 8391)
+
+
+Started GET "/admin/categories" for ::1 at 2023-08-21 10:26:01 +0700
+Processing by Admin::CategoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT `categories`.* FROM `categories`[0m
+  ↳ app/views/admin/categories/index.html.erb:10
+  Rendered admin/categories/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 870)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 16 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/layouts/application.html.erb:16
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 8134)
+Completed 200 OK in 11ms (Views: 9.4ms | ActiveRecord: 0.5ms | Allocations: 8987)
+
+
+Started GET "/admin/categories" for ::1 at 2023-08-21 10:26:02 +0700
+Processing by Admin::CategoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT `categories`.* FROM `categories`[0m
+  ↳ app/views/admin/categories/index.html.erb:10
+  Rendered admin/categories/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 659)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 16 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/layouts/application.html.erb:16
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | Allocations: 7632)
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.9ms | Allocations: 7910)
+
+
+Started GET "/admin/categories" for ::1 at 2023-08-21 10:26:36 +0700
+Processing by Admin::CategoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT `categories`.* FROM `categories`[0m
+  ↳ app/views/admin/categories/index.html.erb:10
+  Rendered admin/categories/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 874)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 16 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/layouts/application.html.erb:16
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | Allocations: 8129)
+Completed 200 OK in 16ms (Views: 13.1ms | ActiveRecord: 0.7ms | Allocations: 8984)
+
+
+Started GET "/admin/categories" for ::1 at 2023-08-21 10:26:41 +0700
+Processing by Admin::CategoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT `categories`.* FROM `categories`[0m
+  ↳ app/views/admin/categories/index.html.erb:10
+  Rendered admin/categories/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 822)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 16 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/layouts/application.html.erb:16
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 8065)
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.5ms | Allocations: 8918)
+
+
+Started GET "/admin/categories" for ::1 at 2023-08-21 10:27:49 +0700
+Processing by Admin::CategoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT `categories`.* FROM `categories`[0m
+  ↳ app/views/admin/categories/index.html.erb:10
+  Rendered admin/categories/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 614)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 16 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/layouts/application.html.erb:16
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 7402)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.5ms | Allocations: 7679)
+
+
+Started GET "/admin/categories" for ::1 at 2023-08-21 10:29:41 +0700
+Processing by Admin::CategoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT `categories`.* FROM `categories`[0m
+  ↳ app/views/admin/categories/index.html.erb:10
+  Rendered admin/categories/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 824)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 16 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/layouts/application.html.erb:16
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | Allocations: 8082)
+Completed 200 OK in 19ms (Views: 17.2ms | ActiveRecord: 0.9ms | Allocations: 8934)
+
+
+Started GET "/admin/categories" for ::1 at 2023-08-21 10:29:42 +0700
+Processing by Admin::CategoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT `categories`.* FROM `categories`[0m
+  ↳ app/views/admin/categories/index.html.erb:10
+  Rendered admin/categories/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 614)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 16 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/layouts/application.html.erb:16
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 7422)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.5ms | Allocations: 7699)
+
+
+Started GET "/admin/categories" for ::1 at 2023-08-21 10:29:43 +0700
+Processing by Admin::CategoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT `categories`.* FROM `categories`[0m
+  ↳ app/views/admin/categories/index.html.erb:10
+  Rendered admin/categories/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 614)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 16 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/layouts/application.html.erb:16
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 7597)
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.5ms | Allocations: 7874)
+
+
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO `categories` (`name`, `created_at`, `updated_at`) VALUES ('Noodles', '2023-08-21 03:31:34.668157', '2023-08-21 03:31:34.668157')[0m
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/admin/categories" for ::1 at 2023-08-21 10:31:37 +0700
+Processing by Admin::CategoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT `categories`.* FROM `categories`[0m
+  ↳ app/views/admin/categories/index.html.erb:10
+  Rendered admin/categories/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 626)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 16 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/layouts/application.html.erb:16
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 7579)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.8ms | Allocations: 7856)
+
+
