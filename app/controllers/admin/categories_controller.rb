@@ -10,13 +10,26 @@ class Admin::CategoriesController < ApplicationController
     @category = Category.new
   end
 
+  def show
+  end
+
   def create
-    p "Params #{category_params}"
     @category = Category.new(category_params)
     if @category.save
       redirect_to admin_categories_path
     else 
       render :index, status: :unprocessable_entity
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @category.update(category_params)
+      redirect_to admin_categories_path
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
 
