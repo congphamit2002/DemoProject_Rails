@@ -15,21 +15,25 @@
         </td>
         <td class='col-4'>
           <div class="d-flex align-items-center justify-content-center">
-            <img
-                src="https://mdbootstrap.com/img/new/avatars/8.jpg"
-                alt=""
-                style="width: 45px; height: 45px"
-                class="rounded-circle"
-                />
+            <% if category.image.present? %>
+              <%= image_tag category.image, class:"img-fluid img-thumbnail", style: "width: 200px;" %>
+            <% else %>
+              <img
+                  src="https://www.eatingwell.com/thmb/YxkWBfh2AvNYrDKoHukRdmRvD5U=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/article_291139_the-top-10-healthiest-foods-for-kids_-02-4b745e57928c4786a61b47d8ba920058.jpg"
+                  alt=""
+                  style="width: 200px;"
+                  class="img-fluid img-thumbnail"
+                  />
+            <% end %>
           </div>
         </td>
         <td class='col-4'>
-          <%= link_to "Edit", edit_admin_category_path(category) , class: "btn btn-link btn-sm btn-rounded" %>
+          <%= link_to "Edit", edit_admin_category_path(category) , class: "btn btn-warning mr-2", style: "width: 80px" %>
 
           <%= link_to "Delete", admin_category_path(category), data: {
             turbo_method: :delete,
             turbo_confirm: "Are you sure"
-          }, class: "btn btn-link btn-sm btn-rounded" %>
+          }, class: "btn btn-danger", style: "width: 80px" %>
         </td>
       </tr>
     <% end %>

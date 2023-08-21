@@ -78,3 +78,4 @@ end
 
 gem 'bootstrap', '~> 5.2.3'
 gem 'pry-rails'
+gem "image_processing", ">= 1.2"
