@@ -24,9 +24,7 @@
           </div>
         </td>
         <td class='col-4'>
-          <button type="button" class="btn btn-link btn-sm btn-rounded">
-            Edit
-          </button>
+          <%= link_to "Edit", edit_admin_category_path(category) , class: "btn btn-link btn-sm btn-rounded" %>
 
           <%= link_to "Delete", admin_category_path(category), data: {
             turbo_method: :delete,
