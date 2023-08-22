@@ -82,4 +82,6 @@ Rails.application.configure do
     :user_name => "thanhcongpham22072002@gmail.com",
     :password => "zlkcgccdydrblvcg"
   }
+
+  config.assets.debug = false
 end
