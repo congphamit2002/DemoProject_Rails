@@ -3,9 +3,8 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :categories
+		resources :products
   end
-
-  resources :categories
 
   devise_for :users, controllers: { registrations: 'registrations', omniauth_callbacks: "users/omniauth_callbacks" }
 end
