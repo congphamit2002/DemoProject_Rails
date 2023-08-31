@@ -77,7 +77,7 @@ group :test do
 end
 
 gem 'bootstrap', '~> 5.2.3'
-gem 'pry-rails'
 gem "image_processing", ">= 1.2"
 gem 'jquery-rails'
 gem 'coffee-rails', '~> 5.0.0'
+gem "select2-rails"
