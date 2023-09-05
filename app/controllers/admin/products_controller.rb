@@ -1,6 +1,6 @@
 class Admin::ProductsController < ApplicationController
   before_action :authenticate_user!
-	before_action :set_category, except: %i[index new create]
+	before_action :set_product, except: %i[index new create]
 
 	def index
 		@products = Product.all
@@ -17,6 +17,17 @@ class Admin::ProductsController < ApplicationController
 			redirect_to admin_products_path
 		else
 			render :new, status: :unprocessable_entity
+		end
+	end
+
+	def edit
+	end
+
+	def update
+		if @product.update(product_params)
+			redirect_to admin_products_path
+		else
+			render :edit, status: :unprocessable_entity
 		end
 	end
 

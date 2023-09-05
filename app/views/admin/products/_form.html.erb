@@ -70,7 +70,7 @@
                     </div>
                     <div class='d-flex justify-content-center align-items-center mb-4 preview-img-container'>
                       <% if product.image.present? %>
-                        <%= image_tag category.image, id: "preview-image", size: "200x200" %>
+                        <%= image_tag product.image, id: "preview-image", size: "200x200" %>
                       <% else %>
                         <%= image_tag "default.png", id: "preview-image", size: "200x200" %>
                       <% end %>
