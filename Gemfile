@@ -83,3 +83,4 @@ gem 'coffee-rails', '~> 5.0.0'
 gem "select2-rails"
 gem 'rubocop'
 gem 'rubocop-rails'
+gem "pagy"

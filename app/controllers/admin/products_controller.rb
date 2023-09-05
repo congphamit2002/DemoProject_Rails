@@ -4,7 +4,7 @@ module Admin
     before_action :set_product, except: %i[index new create]
 
     def index
-      @products = Product.all
+      @pagy, @products = pagy(Product.all)
     end
 
     def new
