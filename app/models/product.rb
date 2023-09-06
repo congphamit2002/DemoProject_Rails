@@ -11,4 +11,8 @@ class Product < ApplicationRecord
   validates :quantity_available, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   validates :price, numericality: { greater_than_or_equal_to: 0 }
   validates :title, length: { maximum: 50 }
+
+  def self.ransackable_attributes(auth_object = nil)
+    ["description", "title"]
+  end
 end
