@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
-  root "home#index"
-
-  namespace :admin do
-    resources :categories
-		resources :products
+  scope "(:locale)", locale: /en|vi/ do
+    root "home#index"
+    devise_for :users, skip: [:omniauth_callbacks]
+    namespace :admin do
+      resources :categories
+      resources :products
+    end
   end
-
-  devise_for :users, controllers: { registrations: 'registrations', omniauth_callbacks: "users/omniauth_callbacks" }
+  devise_for :users, skip: [:session, :password, :registration], controllers: { registrations: 'registrations', omniauth_callbacks: "users/omniauth_callbacks" }
 end

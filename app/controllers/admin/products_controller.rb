@@ -4,7 +4,8 @@ module Admin
     before_action :set_product, except: %i[index new create]
 
     def index
-      @pagy, @products = pagy(Product.all)
+      @q = Product.ransack(params[:q])
+      @pagy, @products = pagy(@q.result(distinct: true))
     end
 
     def new
@@ -28,6 +29,14 @@ module Admin
         redirect_to admin_products_path
       else
         render :edit, status: :unprocessable_entity
+      end
+    end
+
+    def destroy
+      if @product.destroy
+        redirect_to admin_products_path
+      else
+        render :index, status: unprocessable_entity
       end
     end
 
