@@ -1,0 +1,54 @@
+<%= link_to "Thêm mới", new_admin_product_path, class: "btn btn-success mx-5 my-3" %>
+
+<%= search_form_for @q, url: :admin_products do |f| %>
+  <%= f.label :title_cont %>
+  <%= f.text_field :title_cont %>
+  <%= f.submit %>
+<% end %>
+  
+<table class="table align-middle mb-0 bg-white text-center">
+  <thead class="bg-light">
+    <tr>
+      <th><%= sort_link @q, :title, "Title" %></th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Quantity available</th>
+      <th>Image</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td class='col-2'>
+          <p class="fw-normal mb-1"><%= product.title %></p>
+        </td>
+        <td class='col-2'>
+          <p class="fw-normal mb-1"><%= product.description %></p>
+        </td>
+        <td class='col-2'>
+          <p class="fw-normal mb-1"><%= product.price %></p>
+        </td>
+        <td class='col-2'>
+          <p class="fw-normal mb-1"><%= product.quantity_available %></p>
+        </td>
+        <td class='col-2'>
+          <div class="d-flex align-items-center justify-content-center">
+            <% if product.image.present? %>
+              <%= image_tag product.image, class:"img-fluid img-thumbnail", style: "width: 200px;" %>
+            <% else %>
+              <%= image_tag "default.png", class: 'img-fluid img-thumbnail', id: "preview-image", size: "200x200" %>
+            <% end %>
+          </div>
+        </td>
+        <td class='col-2'>
+          <%= link_to "Edit", edit_admin_product_path(product) , class: "btn btn-warning mr-2", style: "width: 80px", locale: I18n.locale  %>
+          <%= link_to "Delete", admin_product_path(product), data: { method: :delete, confirm: 'Are you sure?!?', turbo: false }, class: "btn btn-danger", style: "width: 80px" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<div class='d-flex align-items-center justify-content-center mt-3'>
+  <%== pagy_bootstrap_nav(@pagy) if @pagy.pages > 1 %>
+</div>

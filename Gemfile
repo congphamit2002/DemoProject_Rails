@@ -27,7 +27,10 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
+#Authenticate
 gem 'devise', '~> 4.9', '>= 4.9.2'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-rails_csrf_protection', '~> 1.0'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
@@ -74,4 +77,11 @@ group :test do
 end
 
 gem 'bootstrap', '~> 5.2.3'
-gem 'pry-rails'
+gem "image_processing", ">= 1.2"
+gem 'jquery-rails'
+gem 'coffee-rails', '~> 5.0.0'
+gem "select2-rails"
+gem 'rubocop'
+gem 'rubocop-rails'
+gem "pagy"
+gem 'ransack'

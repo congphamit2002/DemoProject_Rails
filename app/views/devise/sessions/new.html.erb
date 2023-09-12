@@ -47,10 +47,7 @@
                   </div>
 
                   <div class="d-flex justify-content-between">
-                    <a class="btn btn-primary btn-lg btn-block" style="background-color: #3b5998" href="#!"
-                      role="button">
-                      <i class="fab fa-facebook-f me-2"></i>Continue with Facebook
-                    </a>
+                    <%= link_to "Continue with Google", user_google_omniauth_authorize_path, class: 'btn btn-primary btn-lg btn-block', data: {turbo: 'fasle'}  %>
                     <a class="btn btn-primary btn-lg btn-block" style="background-color: #55acee" href="#!"
                       role="button">
                       <i class="fab fa-twitter me-2"></i>Continue with Twitter</a>

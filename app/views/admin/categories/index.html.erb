@@ -1,0 +1,37 @@
+<%= link_to "Thêm mới", new_admin_category_path, class: "btn btn-success mx-5 my-3" %>
+<table class="table align-middle mb-0 bg-white text-center">
+  <thead class="bg-light">
+    <tr>
+      <th>Name</th>
+      <th>Image</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @categories.each do |category| %>
+      <tr>
+        <td class='col-4'>
+          <p class="fw-normal mb-1"><%= category.name %></p>
+        </td>
+        <td class='col-4'>
+          <div class="d-flex align-items-center justify-content-center">
+            <% if category.image.present? %>
+              <%= image_tag category.image, class:"img-fluid img-thumbnail", style: "width: 200px;" %>
+            <% else %>
+              <img
+                  src="https://www.eatingwell.com/thmb/YxkWBfh2AvNYrDKoHukRdmRvD5U=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/article_291139_the-top-10-healthiest-foods-for-kids_-02-4b745e57928c4786a61b47d8ba920058.jpg"
+                  alt=""
+                  style="width: 200px;"
+                  class="img-fluid img-thumbnail"
+                  />
+            <% end %>
+          </div>
+        </td>
+        <td class='col-4'>
+          <%= link_to "Edit", edit_admin_category_path(category) , class: "btn btn-warning mr-2", style: "width: 80px" %>
+          <%= link_to "Delete", admin_category_path(category), data: { method: :delete, confirm: 'Are you sure?!?' }, class: "btn btn-danger", style: "width: 80px" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
